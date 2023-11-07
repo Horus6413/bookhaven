@@ -26,7 +26,7 @@ const produtolivraria = new mongoose.Schema({
   id_produtolivraria: { type: String, required: true },
   descricao: { type: String },
   editora: { type: String },
-  datafabricacao: { type: Date },
+  dataimpressao: { type: Date },
   quantidadeestoque: { type: Number },
 });
 
@@ -55,7 +55,7 @@ app.post("/cadastroprodutolivraria", async (req, res) => {
   const id_produtolivraria = req.body.id_produtolivraria;
   const descricao = req.body.descricao;
   const editora = req.body.editora;
-  const datafabricacao = req.body.dataFabricacao;
+  const dataimpressao = req.body.dataimpressao;
   const quantidadeestoque = req.body.quantidadeEstoque;
 
   //mandando para banco
@@ -63,7 +63,7 @@ app.post("/cadastroprodutolivraria", async (req, res) => {
     id_produtolivraria: id_produtolivraria,
     descricao: descricao,
     editora: editora,
-    dataFabricacao: dataFabricacao,
+    dataimpressao: dataimpressao,
     quantidadeEstoque: quantidadeEstoque,
   });
   try {
